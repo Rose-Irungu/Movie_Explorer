@@ -15,7 +15,7 @@ export default function SignUp() {
 
     if (foundUser) {
       localStorage.setItem("token", "dummy");
-      navigate("/gallery");
+      navigate("/");
     } else {
       setError("Invalid email or password");
     }

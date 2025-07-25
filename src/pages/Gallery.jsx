@@ -27,7 +27,7 @@ export default function Gallery() {
   if (loading) return <p>Loading movies...</p>;
 
   return (
-    <div>
+    <div className="flex justify-around mt-[40px] ">
       {movies.map((movie, index) => (
         <MovieCard
          key={index}

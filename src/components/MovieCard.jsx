@@ -13,7 +13,7 @@ export default function MovieCard({
         <div id="details" className="flex flex-col gap-1">
           <h1 className="text-sm font-dmsans font-semibold text-gray-700">{cardTitle}</h1>
           <p className="text-base font-dmsans font-bold text-gray-600">{year}</p>
-          <p className="text-xs font-dmsans font-medium text-[#FFDEDE] underline">{Runtime}</p>
+          <p className="text-xs font-dmsans font-bold text-black underline">{Runtime}</p>
           <img src={Poster} alt={cardTitle} className="w-24 h-auto rounded-md" />
 
         

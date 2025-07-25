@@ -20,7 +20,7 @@ export default function Login() {
 
     if (foundUser) {
       localStorage.setItem('token', 'dummy');
-      navigate('/gallery');
+      navigate('/');
     } else {
       setError('Invalid email or password');
     }
