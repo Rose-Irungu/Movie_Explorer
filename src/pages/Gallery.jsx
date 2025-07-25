@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import MovieCard from '../components/MovieCard';
+import { useState, useEffect } from "react";
+import MovieCard from "../components/MovieCard";
 
 export default function Gallery() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = 'https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies';
+  const API_URL =
+    "https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies";
 
   useEffect(() => {
     setLoading(true);
@@ -15,20 +16,27 @@ export default function Gallery() {
         .then((data) => {
           setMovies(data);
           setLoading(false);
-      
         })
         .catch((error) => {
           console.error("Error fetching movies:", error);
           setLoading(false);
         });
-    }, 1000); 
+    }, 1000);
   }, []);
 
   if (loading) return <p>Loading movies...</p>;
 
   return (
     <div>
-   
+      {movies.map((movie, index) => (
+        <MovieCard
+         key={index}
+         cardTitle={movie.Title}
+         year={movie.Year}
+         Runtime={movie.Runtime}
+         Poster={movie.Poster} 
+         />
+      ))}
     </div>
   );
 }
