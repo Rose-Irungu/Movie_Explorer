@@ -15,7 +15,7 @@ export default function Gallery() {
         .then((data) => {
           setMovies(data);
           setLoading(false);
-          console.log(data)
+      
         })
         .catch((error) => {
           console.error("Error fetching movies:", error);
@@ -27,10 +27,8 @@ export default function Gallery() {
   if (loading) return <p>Loading movies...</p>;
 
   return (
-    <div className="gallery">
-      {movies.map((movie) => (
-        <MovieCard />
-      ))}
+    <div>
+   
     </div>
   );
 }
