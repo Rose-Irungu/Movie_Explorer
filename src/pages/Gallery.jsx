@@ -29,7 +29,7 @@ export default function Gallery() {
   return (
     <div className="gallery">
       {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
+        <MovieCard />
       ))}
     </div>
   );
