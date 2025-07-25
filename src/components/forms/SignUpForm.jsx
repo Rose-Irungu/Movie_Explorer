@@ -13,6 +13,10 @@ export default function SignUp() {
   const handleSignUp = (e) => {
     e.preventDefault();
 
+    const foundUser = dummyUsers.find(
+      (user) => user.email === email && user.password === password
+    );
+
     if (foundUser) {
       localStorage.setItem("token", "dummy");
       navigate("/");
@@ -61,7 +65,7 @@ export default function SignUp() {
                 value={password}
                 className="w-full border border-gray-400 rounded px-3 py-2 pr-10"
                 required
-                onChange={e => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className="absolute top-9 right-3 cursor-pointer text-gray-500"></div>
               <p className="text-xs text-gray-700 mt-1">
