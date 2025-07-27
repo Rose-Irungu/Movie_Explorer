@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/utils/PrivateRoute.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1753607817735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1753607817735,
+            "name": "Commit-0",
+            "content": "import { Navigate } from 'react-router-dom';\r\n\r\nexport default function PrivateRoute({ children }) {\r\n  const token = localStorage.getItem('token');\r\n  return token ? children : <Navigate to=\"/login/page/\" />;\r\n}"
+        }
+    ]
+}

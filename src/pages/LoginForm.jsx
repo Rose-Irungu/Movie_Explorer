@@ -1,6 +1,6 @@
 import React from "react";
 import{ Link }from "react-router-dom";
-import { dummyUsers }  from "../../dummyData/dummyUsers";
+import { dummyUsers }  from "../dummyData/dummyUsers";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

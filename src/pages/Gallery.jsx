@@ -5,8 +5,7 @@ export default function Gallery() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL =
-    "https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies";
+  const API_URL = "https://jsonfakery.com/movies/simple-paginate";
 
   useEffect(() => {
     setLoading(true);
@@ -14,7 +13,7 @@ export default function Gallery() {
       fetch(API_URL)
         .then((res) => res.json())
         .then((data) => {
-          setMovies(data);
+          setMovies(data.data.slice(0, 10));
           setLoading(false);
         })
         .catch((error) => {
@@ -27,15 +26,15 @@ export default function Gallery() {
   if (loading) return <p>Loading movies...</p>;
 
   return (
-    <div className="flex justify-around mt-[40px] ">
-      {movies.map((movie, index) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+      {movies.map((movie) => (
         <MovieCard
-         key={index}
-         cardTitle={movie.Title}
-         year={movie.Year}
-         Runtime={movie.Runtime}
-         Poster={movie.Poster} 
-         />
+          key={movie.id}
+          id={movie.id}
+          title={movie.original_title}
+          releaseDate={movie.release_date}
+          poster={movie.poster_path}
+        />
       ))}
     </div>
   );

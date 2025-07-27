@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/LoginForm.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1753607033147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1753607033147,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport{ Link }from \"react-router-dom\";\r\nimport { dummyUsers }  from \"../dummyData/dummyUsers\";\r\nimport { useState } from 'react';\r\nimport { useNavigate } from 'react-router-dom';\r\n\r\n\r\nexport default function Login() {\r\n  const navigate = useNavigate();\r\n  const [email, setEmail] = useState('');\r\n  const [password, setPassword] = useState('');\r\n  const [error, setError] = useState('');\r\n\r\n  const handleLogin = (e) => {\r\n    e.preventDefault();\r\n\r\n    const foundUser = dummyUsers.find(\r\n      user => user.email === email && user.password === password\r\n    );\r\n\r\n    if (foundUser) {\r\n      localStorage.setItem('token', 'dummy');\r\n      navigate('/');\r\n    } else {\r\n      setError('Invalid email or password');\r\n    }\r\n  \r\n  };\r\n\r\n  return (\r\n    <div className=\"min-h-screen flex items-center justify-center bg-black p-6\">\r\n      <div className=\"bg-[#FFDEDE] shadow-lg rounded-lg w-full max-w-2xl\">\r\n        <div className=\"w-full md:w-1/2 p-8 mt-17 ml-[200px]\">\r\n          <h2 className=\"text-3xl font-semibold mb-6\">Sign In</h2>\r\n          {error && <p style={{ color: 'red' }}>{error}</p>}\r\n          <form onSubmit={handleLogin}>\r\n            <div className=\"mb-4\">\r\n              <label className=\"block text-sm font-medium mb-1\">Email *</label>\r\n              <input\r\n                type=\"email\"\r\n                placeholder=\"Your Email\"\r\n                value={email}\r\n                className=\"w-full border border-gray-500 rounded px-3 py-2\"\r\n                required\r\n                 onChange={e => setEmail(e.target.value)}\r\n              />\r\n            </div>\r\n\r\n            <div className=\"mb-4 relative\">\r\n              <label className=\"block text-sm font-medium mb-1\">\r\n                Password*\r\n              </label>\r\n              <input\r\n                type=\"password\"\r\n                placeholder=\"Password\"\r\n                 value={password}\r\n                className=\"w-full border border-gray-400 rounded px-3 py-2 pr-10\"\r\n                required\r\n                  onChange={e => setPassword(e.target.value)}\r\n\r\n\r\n              />\r\n              <div className=\"absolute top-9 right-3 cursor-pointer text-gray-500\"></div>\r\n              <p className=\"text-xs text-gray-700 mt-1\">  Don't have an account?{' '}\r\n               <span>\r\n               <Link to=\"/signup/page/\" className=\"text-black hover:underline ml-4\" >\r\n               Sign up\r\n               \r\n               </Link>\r\n               </span> \r\n                </p>\r\n            </div>\r\n\r\n            \r\n\r\n            <div className=\"mb-4\">\r\n              <button\r\n                type=\"submit\"\r\n                className=\"w-full bg-[#CF0F47] text-white py-2 rounded hover:bg-[#FF0B55]\"\r\n              >\r\n                Log in\r\n              </button>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/MovieCard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1753609222394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1753609231464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       className=\"basis-full w-full md:basis-1/2 md:w-1/2 lg:basis-1/4 lg:w-1/4 p-2\"\r\n     >\r\n       <div className=\"flex items-center justify-between h-full rounded-xl bg-[#FFDEDE] p-6 shadow-md\">\r\n         <div id=\"details\" className=\"flex flex-col gap-1\">\r\n-          <h1 className=\"text-sm font-dmsans font-semibold text-gray-700\">{caritle}</h1>\r\n+          <h1 className=\"text-sm font-dmsans font-semibold text-gray-700\">{caitle}</h1>\r\n           <p className=\"text-base font-dmsans font-bold text-gray-600\">{year}</p>\r\n           <p className=\"text-xs font-dmsans font-bold text-black underline\">{Runtime}</p>\r\n           <img src={Poster} alt={cardTitle} className=\"w-24 h-auto rounded-md\" />\r\n \r\n"
+                },
+                {
+                    "date": 1753609244102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     >\r\n       <div className=\"flex items-center justify-between h-full rounded-xl bg-[#FFDEDE] p-6 shadow-md\">\r\n         <div id=\"details\" className=\"flex flex-col gap-1\">\r\n           <h1 className=\"text-sm font-dmsans font-semibold text-gray-700\">{title}</h1>\r\n-          <p className=\"text-base font-dmsans font-bold text-gray-600\">{year}</p>\r\n+          <p className=\"text-base font-dmsans font-bold text-gray-600\">{}</p>\r\n           <p className=\"text-xs font-dmsans font-bold text-black underline\">{Runtime}</p>\r\n           <img src={Poster} alt={cardTitle} className=\"w-24 h-auto rounded-md\" />\r\n \r\n         \r\n"
+                }
+            ],
+            "date": 1753609222394,
+            "name": "Commit-0",
+            "content": "export default function MovieCard({\r\n   title,\r\n  releaseDate,\r\n  poster\r\n\r\n}) {\r\n  return (\r\n    <div\r\n      className=\"basis-full w-full md:basis-1/2 md:w-1/2 lg:basis-1/4 lg:w-1/4 p-2\"\r\n    >\r\n      <div className=\"flex items-center justify-between h-full rounded-xl bg-[#FFDEDE] p-6 shadow-md\">\r\n        <div id=\"details\" className=\"flex flex-col gap-1\">\r\n          <h1 className=\"text-sm font-dmsans font-semibold text-gray-700\">{cardTitle}</h1>\r\n          <p className=\"text-base font-dmsans font-bold text-gray-600\">{year}</p>\r\n          <p className=\"text-xs font-dmsans font-bold text-black underline\">{Runtime}</p>\r\n          <img src={Poster} alt={cardTitle} className=\"w-24 h-auto rounded-md\" />\r\n\r\n        \r\n        </div>\r\n       \r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n"
+        }
+    ]
+}
